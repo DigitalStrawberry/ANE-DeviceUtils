@@ -1,0 +1,41 @@
+<extension xmlns="http://ns.adobe.com/air/extension/19.0">
+  <id>com.digitalstrawberry.ane.deviceUtils</id>
+  <versionNumber>1.0.0</versionNumber>
+  <platforms>
+    <platform name="iPhone-ARM">
+        <applicationDeployment>
+            <nativeLibrary>libDeviceUtils.a</nativeLibrary>
+            <initializer>DeviceUtilsInitializer</initializer>
+            <finalizer>DeviceUtilsFinalizer</finalizer>
+        </applicationDeployment>
+    </platform>
+
+    <platform name="iPhone-x86">
+        <applicationDeployment>
+            <nativeLibrary>libDeviceUtils.a</nativeLibrary>
+            <initializer>DeviceUtilsInitializer</initializer>
+            <finalizer>DeviceUtilsFinalizer</finalizer>
+        </applicationDeployment>
+    </platform>
+
+    <platform name="Android-ARM">
+        <applicationDeployment>
+            <nativeLibrary>libDeviceUtils.jar</nativeLibrary>
+            <initializer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</initializer>
+            <finalizer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</finalizer>
+        </applicationDeployment>
+    </platform>
+
+    <platform name="Android-x86">
+        <applicationDeployment>
+            <nativeLibrary>libDeviceUtils.jar</nativeLibrary>
+            <initializer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</initializer>
+            <finalizer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</finalizer>
+        </applicationDeployment>
+    </platform>
+
+    <platform name="default">
+        <applicationDeployment/>
+    </platform>
+  </platforms>
+</extension>

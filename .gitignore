@@ -1,0 +1,13 @@
+actionscript/.idea
+Main.iml
+android/.gradle
+android/.idea
+android/build
+android/gen
+project.properties
+build/temp
+demo_app
+.DS_STORE
+UserInterfaceState.xcuserstate
+ios/DeviceUtils.xcodeproj/xcuserdata/*.xcuserdatad
+ios/DeviceUtils.xcodeproj/project.xcworkspace/xcuserdata
