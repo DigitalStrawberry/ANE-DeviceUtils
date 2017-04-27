@@ -4,7 +4,7 @@ A simple native extension to retrieve basic device information.
 
 ### Usage
 
-Download the ANE from from the [bin](bin/) directory or from the [releases](releases/) page and add it to your app's descriptor:
+Download the ANE from from the [bin](bin/) directory or from the [releases](../../releases/) page and add it to your app's descriptor:
 
 ```xml
 <extensions>
