@@ -28,7 +28,7 @@
 
 FREObject devutils_getIdfv( FREContext context, void* functionData, uint32_t argc, FREObject argv[] ) {
     NSString* idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    FREObject result;
+    FREObject result = NULL;
     FRENewObjectFromUTF8((unsigned int) [idfv length], (const uint8_t*) [idfv UTF8String], &result);
     return result;
 }

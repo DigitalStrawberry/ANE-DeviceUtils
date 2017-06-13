@@ -29,7 +29,7 @@
 FREObject devutils_getSystemVersion( FREContext context, void* functionData, uint32_t argc, FREObject argv[] ) {
     NSString* sysVersion = [[UIDevice currentDevice] systemVersion];
     
-    FREObject result;
+    FREObject result = NULL;
     FRENewObjectFromUTF8((unsigned int) [sysVersion length], (const uint8_t*) [sysVersion UTF8String], &result);
     return result;
 }

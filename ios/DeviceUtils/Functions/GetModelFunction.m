@@ -32,7 +32,7 @@ FREObject devutils_getModel( FREContext context, void* functionData, uint32_t ar
     uname(&systemInfo);
     NSString* model = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
-    FREObject result;
+    FREObject result = NULL;
     FRENewObjectFromUTF8((unsigned int) [model length], (const uint8_t*) [model UTF8String], &result);
     return result;
 }

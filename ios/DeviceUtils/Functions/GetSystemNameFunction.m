@@ -29,7 +29,7 @@
 FREObject devutils_getSystemName( FREContext context, void* functionData, uint32_t argc, FREObject argv[] ) {
     NSString* sysName = [[UIDevice currentDevice] systemName];
     
-    FREObject result;
+    FREObject result = NULL;
     FRENewObjectFromUTF8((unsigned int) [sysName length], (const uint8_t*) [sysName UTF8String], &result);
     return result;
 }
