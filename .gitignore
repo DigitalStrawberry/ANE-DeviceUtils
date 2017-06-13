@@ -11,3 +11,5 @@ demo_app
 UserInterfaceState.xcuserstate
 ios/DeviceUtils.xcodeproj/xcuserdata/*.xcuserdatad
 ios/DeviceUtils.xcodeproj/project.xcworkspace/xcuserdata
+.idea
+ios/build
