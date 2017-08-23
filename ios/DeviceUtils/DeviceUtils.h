@@ -25,6 +25,9 @@
 #import "FlashRuntimeExtensions.h"
 #import <Foundation/Foundation.h>
 
+#define DEFINE_ANE_FUNCTION(fn) FREObject fn(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+#define MAP_FUNCTION(name, fn, data) { (const uint8_t*)(#name), (data), &(fn) }
+
 @interface DeviceUtils : NSObject
 
 @end

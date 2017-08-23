@@ -23,16 +23,68 @@
  */
 
 #import "DeviceUtils.h"
-#import "Functions/GetIdentifierForVendorFunction.h"
-#import "Functions/GetSystemNameFunction.h"
-#import "Functions/GetSystemVersionFunction.h"
-#import "Functions/GetModelFunction.h"
+#import <sys/sysctl.h>
+#import <UIKit/UIKit.h>
 
 static BOOL DeviceUtilsLogEnabled = NO;
 FREContext DeviceUtilsExtContext = nil;
 
 @implementation DeviceUtils
 @end
+
+# pragma mark - Private API
+
+NSString* devutils_getSysInfo(char* typeSpecifier)
+{
+    size_t size;
+    sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
+    
+    char* sysInfo = malloc(size);
+    sysctlbyname(typeSpecifier, sysInfo, &size, NULL, 0);
+    
+    NSString* result = [NSString stringWithCString:sysInfo encoding:NSUTF8StringEncoding];
+    
+    free(sysInfo);
+    
+    return result;
+}
+
+# pragma mark - ANE Functions
+
+DEFINE_ANE_FUNCTION(devutils_getModel)
+{
+    NSString* model = devutils_getSysInfo("hw.machine");
+    
+    FREObject result = NULL;
+    FRENewObjectFromUTF8((unsigned int) [model length], (const uint8_t*) [model UTF8String], &result);
+    return result;
+}
+
+DEFINE_ANE_FUNCTION(devutils_getIdfv)
+{
+    NSString* idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    FREObject result = NULL;
+    FRENewObjectFromUTF8((unsigned int) [idfv length], (const uint8_t*) [idfv UTF8String], &result);
+    return result;
+}
+
+DEFINE_ANE_FUNCTION(devutils_getSystemName)
+{
+    NSString* sysName = [[UIDevice currentDevice] systemName];
+    
+    FREObject result = NULL;
+    FRENewObjectFromUTF8((unsigned int) [sysName length], (const uint8_t*) [sysName UTF8String], &result);
+    return result;
+}
+
+DEFINE_ANE_FUNCTION(devutils_getSystemVersion)
+{
+    NSString* sysVersion = [[UIDevice currentDevice] systemVersion];
+    
+    FREObject result = NULL;
+    FRENewObjectFromUTF8((unsigned int) [sysVersion length], (const uint8_t*) [sysVersion UTF8String], &result);
+    return result;
+}
 
 /**
  *
@@ -42,14 +94,15 @@ FREContext DeviceUtilsExtContext = nil;
  *
  **/
 
-FRENamedFunction airDeviceUtilsExtFunctions[] = {
-    { (const uint8_t*) "getIdentifierForVendor", 0, devutils_getIdfv },
-    { (const uint8_t*) "getModel",               0, devutils_getModel },
-    { (const uint8_t*) "getSystemName",          0, devutils_getSystemName },
-    { (const uint8_t*) "getSystemVersion",       0, devutils_getSystemVersion }
-};
-
-void DeviceUtilsContextInitializer( void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet ) {
+void DeviceUtilsContextInitializer( void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet )
+{
+    static FRENamedFunction airDeviceUtilsExtFunctions[] = {
+        MAP_FUNCTION(getIdentifierForVendor, devutils_getIdfv, NULL),
+        MAP_FUNCTION(getModel, devutils_getModel, NULL),
+        MAP_FUNCTION(getSystemName, devutils_getSystemName, NULL),
+        MAP_FUNCTION(getSystemVersion, devutils_getSystemVersion, NULL),
+    };
+    
     *numFunctionsToSet = sizeof( airDeviceUtilsExtFunctions ) / sizeof( FRENamedFunction );
     
     *functionsToSet = airDeviceUtilsExtFunctions;

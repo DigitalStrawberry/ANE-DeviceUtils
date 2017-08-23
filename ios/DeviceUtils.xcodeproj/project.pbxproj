@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C3B68FF61EB1F4A500345044 /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B68FF41EB1F4A500345044 /* DeviceUtils.m */; };
-		C3B690001EB1F4B500345044 /* GetIdentifierForVendorFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B68FF91EB1F4B500345044 /* GetIdentifierForVendorFunction.m */; };
-		C3B690011EB1F4B500345044 /* GetModelFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B68FFB1EB1F4B500345044 /* GetModelFunction.m */; };
-		C3B690021EB1F4B500345044 /* GetSystemNameFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B68FFD1EB1F4B500345044 /* GetSystemNameFunction.m */; };
-		C3B690031EB1F4B500345044 /* GetSystemVersionFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B68FFF1EB1F4B500345044 /* GetSystemVersionFunction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,14 +27,6 @@
 		C3B68FF31EB1F4A500345044 /* DeviceUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceUtils.h; path = DeviceUtils/DeviceUtils.h; sourceTree = "<group>"; };
 		C3B68FF41EB1F4A500345044 /* DeviceUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceUtils.m; path = DeviceUtils/DeviceUtils.m; sourceTree = "<group>"; };
 		C3B68FF51EB1F4A500345044 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = DeviceUtils/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
-		C3B68FF81EB1F4B500345044 /* GetIdentifierForVendorFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetIdentifierForVendorFunction.h; path = DeviceUtils/Functions/GetIdentifierForVendorFunction.h; sourceTree = "<group>"; };
-		C3B68FF91EB1F4B500345044 /* GetIdentifierForVendorFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetIdentifierForVendorFunction.m; path = DeviceUtils/Functions/GetIdentifierForVendorFunction.m; sourceTree = "<group>"; };
-		C3B68FFA1EB1F4B500345044 /* GetModelFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetModelFunction.h; path = DeviceUtils/Functions/GetModelFunction.h; sourceTree = "<group>"; };
-		C3B68FFB1EB1F4B500345044 /* GetModelFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetModelFunction.m; path = DeviceUtils/Functions/GetModelFunction.m; sourceTree = "<group>"; };
-		C3B68FFC1EB1F4B500345044 /* GetSystemNameFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetSystemNameFunction.h; path = DeviceUtils/Functions/GetSystemNameFunction.h; sourceTree = "<group>"; };
-		C3B68FFD1EB1F4B500345044 /* GetSystemNameFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetSystemNameFunction.m; path = DeviceUtils/Functions/GetSystemNameFunction.m; sourceTree = "<group>"; };
-		C3B68FFE1EB1F4B500345044 /* GetSystemVersionFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetSystemVersionFunction.h; path = DeviceUtils/Functions/GetSystemVersionFunction.h; sourceTree = "<group>"; };
-		C3B68FFF1EB1F4B500345044 /* GetSystemVersionFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetSystemVersionFunction.m; path = DeviceUtils/Functions/GetSystemVersionFunction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,27 +59,11 @@
 		C3B68FF21EB1F49A00345044 /* DeviceUtils */ = {
 			isa = PBXGroup;
 			children = (
-				C3B68FF71EB1F4A900345044 /* Functions */,
 				C3B68FF31EB1F4A500345044 /* DeviceUtils.h */,
 				C3B68FF41EB1F4A500345044 /* DeviceUtils.m */,
 				C3B68FF51EB1F4A500345044 /* FlashRuntimeExtensions.h */,
 			);
 			name = DeviceUtils;
-			sourceTree = "<group>";
-		};
-		C3B68FF71EB1F4A900345044 /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				C3B68FF81EB1F4B500345044 /* GetIdentifierForVendorFunction.h */,
-				C3B68FF91EB1F4B500345044 /* GetIdentifierForVendorFunction.m */,
-				C3B68FFA1EB1F4B500345044 /* GetModelFunction.h */,
-				C3B68FFB1EB1F4B500345044 /* GetModelFunction.m */,
-				C3B68FFC1EB1F4B500345044 /* GetSystemNameFunction.h */,
-				C3B68FFD1EB1F4B500345044 /* GetSystemNameFunction.m */,
-				C3B68FFE1EB1F4B500345044 /* GetSystemVersionFunction.h */,
-				C3B68FFF1EB1F4B500345044 /* GetSystemVersionFunction.m */,
-			);
-			name = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,11 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3B690031EB1F4B500345044 /* GetSystemVersionFunction.m in Sources */,
-				C3B690001EB1F4B500345044 /* GetIdentifierForVendorFunction.m in Sources */,
 				C3B68FF61EB1F4A500345044 /* DeviceUtils.m in Sources */,
-				C3B690021EB1F4B500345044 /* GetSystemNameFunction.m in Sources */,
-				C3B690011EB1F4B500345044 /* GetModelFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
