@@ -31,6 +31,10 @@ trace(DeviceUtils.systemVersion);
 
 ### Changelog
 
+#### August 23, 2017 (v1.0.2)
+
+* Changed structure of the iOS project
+
 #### June 13, 2017 (v1.0.1)
 
 * Initialized `FREObject` variables to `NULL` (iOS)
