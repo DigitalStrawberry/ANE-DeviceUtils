@@ -76,7 +76,7 @@
 
         <!-- unzip .aar -->
         <mkdir dir="temp/android/aar" />
-        <unzip src="../android/build/outputs/aar/android-${ANDROID_TARGET}.aar" dest="temp/android/aar" />
+        <unzip src="../android/build/outputs/aar/android.aar" dest="temp/android/aar" />
 
         <!-- take the .jar -->
         <unzip src="temp/android/aar/classes.jar" dest="temp/android/aar/classes" />
@@ -164,6 +164,7 @@
             <arg line="-platform iPhone-ARM -platformoptions ../platform-ios.xml -C ios/ ."/> 
             <arg line="-platform iPhone-x86 -platformoptions ../platform-ios.xml -C ios-sim/ ."/> 
             <arg line="-platform Android-ARM -C android/ ."/>
+            <arg line="-platform Android-ARM64 -C android/ ."/>
             <arg line="-platform Android-x86 -C android/ ."/>
             <arg line="-platform default -C default/ ."/>
         </exec>

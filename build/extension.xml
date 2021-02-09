@@ -26,6 +26,14 @@
         </applicationDeployment>
     </platform>
 
+    <platform name="Android-ARM64">
+        <applicationDeployment>
+            <nativeLibrary>libDeviceUtils.jar</nativeLibrary>
+            <initializer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</initializer>
+            <finalizer>com.digitalstrawberry.ane.deviceutils.DeviceUtilsExtension</finalizer>
+        </applicationDeployment>
+    </platform>
+
     <platform name="Android-x86">
         <applicationDeployment>
             <nativeLibrary>libDeviceUtils.jar</nativeLibrary>
